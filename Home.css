@@ -1,0 +1,261 @@
+/* Home.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.nav-logo {
+    font-family: 'Sacramento', cursive;
+    font-size: 24px;
+}
+
+.nav-logo p {
+    margin: 0;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-menu a.active,
+.nav-menu a:hover {
+    color: #f4b400;
+}
+
+.nav-menu-btn {
+    display: none;
+}
+
+.nav-menu .login-btn {
+    background-color: #f4b400; /* Highlighted background color for Login button */
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-menu .login-btn:hover {
+    background-color: #e5a800;
+    color: #fff;
+}
+
+/* Add this CSS to your existing Home.css file */
+
+/* Adjust the hero section styles */
+.hero-section {
+    position: relative;
+    background: url('hero section.JPG') no-repeat top ;
+    background-size: cover; /* Ensures the image covers the entire section */
+    color: #fffefe;
+    padding: 20px 20px;
+    top: 20%;
+    text-align: center;
+    height: 70vh; /* Adjusted height to make the hero section smaller */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    overflow: hidden; /* Ensures any overflow from child elements is hidden */
+}
+
+/* Add the overlay using the ::before pseudo-element */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: 1; /* Places the overlay behind other content */
+}
+
+/* Adjust the position of the content within the hero section */
+.hero-section > * {
+    position: relative;
+    z-index: 2; /* Ensures the content is above the overlay */
+}
+
+/* Adjust other hero section styles if needed */
+.hero-section h1 {
+    font-size: 3rem; /* Adjust font size to fit better in the hero section */
+    margin: 0;
+}
+
+.hero-section p {
+    font-size: 1.125rem; /* Adjust font size for better scaling */
+    margin: 10px 0 20px;
+}
+
+.hero-section button {
+    background-color: #f4a700;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem; /* Adjust font size for better scaling */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-section button:hover {
+    background-color: #e5a800;
+}
+
+
+.portfolio-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.portfolio-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.portfolio-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px);
+    text-align: center;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.portfolio-item p {
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.about-section,
+.contact-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-section h2,
+.contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-section p,
+.contact-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about-section button,
+.contact-section button {
+    background-color: #f4b400;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.about-section button:hover,
+.contact-section button:hover {
+    background-color: #e5a800;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Responsive design for navigation menu */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu.responsive {
+        display: flex;
+    }
+
+    .nav-menu-btn {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-menu a {
+        padding: 10px;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav-menu a.active {
+        color: #f4b400;
+    }
+}
