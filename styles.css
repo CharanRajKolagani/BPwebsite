@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    margin: 0; /* Removes default margins */
+    padding: 0;
+}
+h1 {
+    font-size: 1rem; /* Reduce font size */
+    font-weight: bold;
+    margin: 0; /* Remove extra margins */
+    padding: 0; /* Remove extra padding */
+    line-height: 30px; /* Align with thin header */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+header {  
+    background: #000000;
+    color: rgb(255, 255, 255);
+    padding: 20px 50px; /* Keep header thin */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px; /* Adjusted for thin header */
+}
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+.logo {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 0.7rem;
+    font-weight: bold;
+     margin-left: 30px; /*Increase left spacing */
+    line-height: 30px;
+}
+nav {
+    font-family:Arial, Helvetica, sans-serif;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Ensures the menu stays in the middle */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Increased gap between menu items */
+    margin-right: 60px; /* Increased right spacing */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 0.65rem;
+    line-height: 30px;
+}
+
+
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+.hero-container {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-content img {
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    bottom: 5px;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.hero {
+    position: relative;
+    top: 150px;
+    bottom: 100px;
+    right: 150px;
+    left: 650px;
+    display: flex;
+    justify-content: right;
+    background: rgba(0, 0, 0, 0); /*Semi-transparent overlay */
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 10px;
+    width: 400px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    /* text-align: center; */
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    position: relative;
+    top: 15px;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    position: relative;
+    top: 30px;
+    text-align: center;
+}
+
+
+.hero-content img {
+    width: 100%; /* Makes the image fill the container */
+    max-width: 100%; /* Adjust based on your preference */
+    height: auto; /* Keeps the aspect ratio */
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.category img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #444;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
