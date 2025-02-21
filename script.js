@@ -30,6 +30,25 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", checkScreenSize);
     checkScreenSize();
 
+    // Smooth scrolling within the same page
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href");
+
+            if (targetId.startsWith("#")) {
+                // Navigate within the same page
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth" });
+                }
+            } else {
+                // Redirect to index.html and scroll to the section
+                window.location.href = `${targetId}`;
+            }
+        });
+    });
+
     // Form validation
     const contactForm = document.querySelector("form");
     if (contactForm) {
@@ -71,9 +90,17 @@ document.addEventListener("DOMContentLoaded", function () {
             img.style.transform = "scale(1)";
         });
     });
-});
-document.querySelectorAll('.social-icons a').forEach(icon => {
-    icon.addEventListener('click', () => {
-        alert('You clicked a social media icon!');
+
+    document.querySelectorAll('.social-icons a').forEach(icon => {
+        icon.addEventListener('click', () => {
+            alert('You clicked a social media icon!');
+        });
+    });
+
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 200, // Animation duration
+        easing: "ease-in-out", // Smooth effect
+        once: true // Only animate once
     });
 });
