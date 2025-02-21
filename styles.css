@@ -89,6 +89,7 @@ section {
     padding: 2rem;
     text-align: center;
 }
+
 .hero-container {
     margin-top: 0;
     padding-top: 0;
@@ -104,84 +105,162 @@ section {
 .hero-content img {
     position: absolute;
     top: 0px;
-    left: 5px;
-    bottom: 5px;
+    left: 0;
     display: block;
     width: 100%;
-    height: auto;
-    object-fit: fill;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fully covers the container without distortion */
 }
 
 .hero {
-    position: relative;
-    top: 150px;
-    bottom: 100px;
-    right: 150px;
-    left: 650px;
+    position: absolute; /* Changed to absolute for better control over positioning */
+    top: 90%; /* Adjusted positioning for better centering */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the content */
     display: flex;
-    justify-content: right;
-    background: rgba(0, 0, 0, 0); /*Semi-transparent overlay */
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 10px; /* Added padding for spacing */
 }
 
 .hero-overlay {
-    position: absolute;
-    bottom: 10px;
-    width: 400px;
-    height: 100px;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    /* text-align: center; */
-    color: rgb(0, 0, 0);
+    text-align: center;
+    color: white;
     font-size: 2rem;
+    font-weight: bold;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 500px; /* Prevents overlay from getting too wide */
 }
 
 .hero h1 {
     font-size: 2rem;
-    font-weight: bold;
     font-family: "Dancing Script", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    position: relative;
-    top: 15px;
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 1rem;
-    margin-bottom: 20px;
-    position: relative;
-    top: 30px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .hero-overlay {
+        width: 80%; /* Makes the overlay take more width on small screens */
+        padding: 15px; /* Adjust padding on smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 1.5rem; /* Smaller font size on mobile */
+    }
+
+    .hero p {
+        font-size: 0.9rem; /* Smaller font size for the paragraph */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay {
+        width: 90%; /* Overlay takes almost the full width */
+    }
+
+    .hero h1 {
+        font-size: 1.3rem; /* Further reduce font size on very small screens */
+    }
+
+    .hero p {
+        font-size: 0.8rem; /* Further reduce paragraph font size */
+    }
+}
+
+/* Portfolio Section */
+#portfolio {
     text-align: center;
+    padding: 3rem 2rem;
+    background-color: #f8f8f8;
+    position: relative;
 }
 
-
-.hero-content img {
-    width: 100%; /* Makes the image fill the container */
-    max-width: 100%; /* Adjust based on your preference */
-    height: auto; /* Keeps the aspect ratio */
-    display: block;
-    margin: 0 auto; /* Centers the image */
-    border-radius: 10px; /* Optional: Adds rounded corners */
+/* Portfolio Title - Properly spaced */
+.portfolio-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
 }
 
+/* Categories */
 .categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 40px; /* More spacing between categories */
+    padding-top: 20px;
 }
 
+/* Category Box */
 .category {
     background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 270px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover Effect - Smooth scaling */
+.category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Title */
+.category-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Category Images - Added animation */
 .category img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover effect on images */
+.category:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portfolio-title {
+        font-size: 2rem;
+    }
+    
+
+    .categories {
+        gap: 20px;
+    }
+
+    .category {
+        width: 220px;
+    }
+
+    .category-title {
+        font-size: 1rem;
+    }
 }
 
 form {
