@@ -97,10 +97,5 @@
 //         });
 //     });
 
-//     // Initialize AOS (Animate On Scroll)
-//     AOS.init({
-//         duration: 200, // Animation duration
-//         easing: "ease-in-out", // Smooth effect
-//         once: true // Only animate once
-//     });
+   
 // });

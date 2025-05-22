@@ -145,15 +145,24 @@ Let your moments live forever — beautifully curated, passionately captured.
     <footer>
         <p>&copy; 2025 CHITHARAN | All Rights Reserved</p>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const headerMenu = document.querySelector('.header-menu');
+        menuToggle.onclick = function() {
+            headerMenu.classList.toggle('active');
+        };
+        headerMenu.querySelectorAll('a').forEach(link => {
+            link.onclick = () => headerMenu.classList.remove('active');
+        });
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 200, // Animation duration
+            easing: "ease-in-out", // Smooth effect
+            once: true // Only animate once
+        });
+    });
+    </script>
 </body>
 </html>
-<script>
-const menuToggle = document.querySelector('.menu-toggle');
-const headerMenu = document.querySelector('.header-menu');
-menuToggle.onclick = function() {
-    headerMenu.classList.toggle('active');
-};
-headerMenu.querySelectorAll('a').forEach(link => {
-    link.onclick = () => headerMenu.classList.remove('active');
-});
-</script>
